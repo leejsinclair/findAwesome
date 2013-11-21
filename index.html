@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app>
+
+  <head>
+  	<!-- made by www.metatags.org -->
+	<meta name="description" content="An easier interface for Font Awesome, the iconic font designed for Bootstrap" />
+	<meta name="keywords" content="font, font awesome, icon, icons, bootstrap, search, find, discover, symbol, symbols" />
+	<meta name="author" content="metatags generator">
+	<meta name="robots" content="noindex, follow">
+	<meta name="revisit-after" content="3 days">
+	<title>Find Awesome the easy way to find font awesome icons</title>
+	<!-- font, font awesome, icon -->
+    <script data-require="angular.js@*" data-semver="1.2.0-rc3-nonmin" src="http://code.angularjs.org/1.2.0-rc.3/angular.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/zeroclipboard-1.2.3/ZeroClipboard.min.js"></script>
+    <script src="js/floating-labels.js"></script>
+    <script src="js/main.js"></script>
+    
+  </head>
+
+  <body ng-controller="app">
+	
+	<div class="wrapper">
+
+	<!-- Search -->
+	<section class="searching">
+	<div class="container">
+	
+	<!-- Social buttons -->
+	<div class="socials">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=598498973523870";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="fb-like" data-href="http://findawesome.io" data-width="80" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://findawesome.io">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+		
+	<!-- Search form -->
+	  <form role="form" class="search">
+		 <div class="row">
+			 <label for="title">Find Awesome</label>
+			 <input type="text" name="search" ng-model="search" class="form-control" placeholder="Find Awesome"  />
+			 <i class="fa fa-search"></i>
+		 </div>
+	  </form>
+	
+	</div>
+	</section>
+
+
+	<!-- Icon search results list -->
+	<section class="listing">
+	<div class="container">
+  
+	  <ul class="font-list">
+		 <li class="font-item" ng-repeat="font in data | filter: search">
+			 <i class="fa {{font.name}}"></i> 
+			 <h3>{{font.name}}</h3>
+		 </li>
+	  </ul>
+	
+	</div>
+    </section>
+    
+    <!-- The Love Section  -->
+	<section class="love">
+		<div class="container">
+		  <p>Find Awesome has been created by <a href="http://metatheory.co/">Lee</a> &amp; <a href="http://designlift.co/">Adrian</a>. With kudos to the awesome <a href="http://fontawesome.io">Font Awesome</a> project.</p>
+		
+		</div>
+    </section>
+
+     </div> <!-- /.wrapper -->
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-44968033-4', 'metatheory.co');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+</html>
