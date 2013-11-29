@@ -2,6 +2,24 @@
 
 function app($scope) {
   $scope.search = '';
+  $scope.select = function( font, height, close ){
+    for(var i=0;i<$scope.data.length;i++) {
+      $scope.data[i].height = 0;
+
+      if( !close && font === $scope.data[i] ) {
+        $scope.data[i].selected = !$scope.data[i].selected;
+
+        console.log($scope.data[i].selected);
+
+        if($scope.data[i].selected===true) {
+          $scope.data[i].height = height || 500;
+        }
+      } else  {
+        $scope.data[i].selected = false;
+      }
+    }
+  };
+
   $scope.data = [
   		{'name':'fa-adjust','searchText':'fa-adjust adjust circle'},
   		{'name':'fa-adn','searchText':'fa-adn adn'},
@@ -433,4 +451,16 @@ function app($scope) {
   		{'name':'fa-youtube-play','searchText':'fa-youtube-play youtube-play social box'},
   		{'name':'fa-youtube-square','searchText':'fa-youtube-square youtube-square social'}
   	];
+
+
 }
+
+$(function() {
+  $("body").on("input propertychange", ".search", function(e) {
+    $(this).toggleClass("search-with-value", !!$(e.target).val());
+  }).on("focus", ".search", function() {
+    $(this).addClass("search-with-focus");
+  }).on("blur", ".search", function() {
+    $(this).removeClass("search-with-focus");
+  });
+});

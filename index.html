@@ -2,23 +2,21 @@
 <html ng-app>
 
   <head>
-  	<!-- made by www.metatags.org -->
-	<meta name="description" content="An easier interface for Font Awesome, the iconic font designed for Bootstrap" />
+  	<meta name="description" content="An easier interface for Font Awesome, the iconic font designed for Bootstrap" />
 	<meta name="keywords" content="font, font awesome, icon, icons, bootstrap, search, find, discover, symbol, symbols" />
 	<meta name="author" content="metatags generator">
 	<meta name="robots" content="noindex, follow">
 	<meta name="revisit-after" content="3 days">
 	<title>Find Awesome the easy way to find font awesome icons</title>
-	<!-- font, font awesome, icon -->
-    <script data-require="angular.js@*" data-semver="1.2.0-rc3-nonmin" src="http://code.angularjs.org/1.2.0-rc.3/angular.js"></script>
+
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/zeroclipboard-1.2.3/ZeroClipboard.min.js"></script>
-    <script src="js/floating-labels.js"></script>
-    <script src="js/main.js"></script>
     
+    
+    <!-- Following added by scriptkyddie777 from the expander demo I stoled LOLZ -->
+    <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
+	<!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
   </head>
 
   <body ng-controller="app">
@@ -49,40 +47,71 @@
 	  <form role="form" class="search">
 		 <div class="row">
 			 <label for="title">Find Awesome</label>
-			 <input type="text" name="search" ng-model="search" class="form-control" placeholder="Find Awesome"  />
+			 <input type="text" name="search" ng-model="search" class="form-control" placeholder="Find Awesome" id="primarySearch"  />
 			 <i class="fa fa-search"></i>
 		 </div>
 	  </form>
+		<div class="row">
+	 		<p class="text-brand">Type above to search for Font Awesome icons</p>
+		</div>
 	
 	</div>
 	</section>
 
-
-	<!-- Icon search results list -->
 	<section class="listing">
+	<!-- Icon search results list -->
 	<div class="container">
   
-	  <ul class="font-list">
-		 <li class="font-item" ng-repeat="font in data | filter: search">
-			 <i class="fa {{font.name}}"></i> 
-			 <h3>{{font.name}}</h3>
+	  <ul id="og-grid" class="og-grid">
+		 <li ng-repeat="font in data | filter: search">
+			<a ng-click="select(font, 400)">
+				<i class="fa {{font.name}}"></i> 
+				<h3>{{font.name}} {{font.selected}}</h3>
+			</a>
+			<div class="og-expander" style="transition: height 350ms ease; -webkit-transition: height 350ms ease; height: {{font.height}}px;">
+				<div class="og-expander-inner">
+					<span class="og-close" ng-click="select(font, 0, true)"></span>
+					<div class="og-fullimg">
+						<h1>{{font.name}}</h1>
+					</div>
+
+					<div class="og-details">
+						<span class="fa {{font.name}} massive"></span>
+						<span class="fa {{font.name}} huge"></span>
+						<span class="fa {{font.name}} big"></span>
+						<span class="fa {{font.name}} medium"></span>
+						<span class="fa {{font.name}} small"></span>
+						<span class="fa {{font.name}} tiny"></span>
+						<p>&lt;i class="fa {{font-name}}"&gt;&lt;/i&gt;</p>
+					</div>
+				</div>
+			</div>
 		 </li>
 	  </ul>
 	
 	</div>
-    </section>
+	</section>
+    
     
     <!-- The Love Section  -->
 	<section class="love">
-		<div class="container">
-		  <p>Find Awesome has been created by <a href="http://metatheory.co/">Lee</a> &amp; <a href="http://designlift.co/">Adrian</a>. With kudos to the awesome <a href="http://fontawesome.io">Font Awesome</a> project.</p>
-		
-		</div>
+	<div class="container">
+  
+	  <p>Find Awesome has been created by <a href="http://metatheory.co/">Lee</a> &amp; <a href="http://designlift.co/">Adrian</a>. With kudos to the awesome <a href="http://fontawesome.io">Font Awesome</a> project.</p>
+	
+	</div>
     </section>
 
      </div> <!-- /.wrapper -->
+     <script>
+      window.onload = function() {
+		document.getElementById("primarySearch").focus();
+	  };
 
-	<script>
+	  try {
+	  	document.getElementById("primarySearch").focus();
+	  } catch(e) { }
+
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -90,7 +119,10 @@
 
 	  ga('create', 'UA-44968033-4', 'metatheory.co');
 	  ga('send', 'pageview');
-
 	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <!--<script src="js/floating-labels.js"></script>-->
+    <script src="js/main.js"></script>
   </body>
 </html>
