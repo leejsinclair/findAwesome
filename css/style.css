@@ -112,6 +112,7 @@ a {
 }
 .twitter-share-button {
 	margin-left: 10px;
+	width: 103px !important;
 }
 img.favicon {
 	width: 72px;
