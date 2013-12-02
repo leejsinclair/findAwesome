@@ -326,7 +326,8 @@ section.listing {
 	clear: both;
 	color: #444;
 }
-.listing li:hover i {
+.listing li:hover i,
+li.og-expanded i {
 	font-size: 6em;
 	text-align: center;
 	width: 100%;
@@ -465,7 +466,7 @@ section.love {
 	border-bottom-color: rgba(52, 73, 94, 1);
 	border-width: 15px;
 	left: 50%;
-	margin: -20px 0 0 -15px;
+	margin: -10px 0 0 -15px;
 }
 
 .og-expander {
@@ -474,7 +475,7 @@ section.love {
 	top: auto;
 	left: 0;
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 20px;
 	text-align: left;
 	height: 0;
 	overflow: hidden;
