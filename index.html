@@ -47,12 +47,13 @@
 	  <form role="form" class="search">
 		 <div class="row">
 			 <label for="title">Find Awesome</label>
+			 <img class="favicon" src="img/find-awesome-icon.png">
 			 <input type="text" name="search" ng-model="search" class="form-control" placeholder="Find Awesome" id="primarySearch"  />
 			 <i class="fa fa-search"></i>
 		 </div>
 	  </form>
-		<div class="row">
-	 		<p class="text-brand">Type above to search for Font Awesome icons</p>
+		<div class="row love">
+	 		<p class="text-brand">Search the <a href="http://fontawesome.io">Font Awesome</a> library of font icons by tag name.</p>
 		</div>
 	
 	</div>
@@ -63,7 +64,7 @@
 	<div class="container">
   
 	  <ul id="og-grid" class="og-grid">
-		 <li ng-repeat="font in data | filter: search">
+		 <li ng-repeat="font in data | filter: search" class="{{font.class}}">
 			<a ng-click="select(font, 400)">
 				<i class="fa {{font.name}}"></i> 
 				<h3>{{font.name}}</h3>
@@ -71,18 +72,21 @@
 			<div class="og-expander" style="transition: height 350ms ease; -webkit-transition: height 350ms ease; height: {{font.height}}px;">
 				<div class="og-expander-inner">
 					<span class="og-close" ng-click="select(font, 0, true)"></span>
-					<div class="og-fullimg">
-						<h1>{{font.name}}</h1>
-					</div>
 
 					<div class="og-details">
+						<div class="icons-preview clearfix">
 						<span class="fa {{font.name}} massive"></span>
 						<span class="fa {{font.name}} huge"></span>
 						<span class="fa {{font.name}} big"></span>
 						<span class="fa {{font.name}} medium"></span>
 						<span class="fa {{font.name}} small"></span>
 						<span class="fa {{font.name}} tiny"></span>
-						<p>&lt;i class="fa {{font-name}}"&gt;&lt;/i&gt;</p>
+						</div>	
+					
+						<h1>{{font.name}}</h1>
+						
+						<div class="highlight"><pre><code class="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa {{font.name}}"</span><span class="nt">&gt;&lt;/i&gt;</span> {{font.name}}</code></pre></div>
+						
 					</div>
 				</div>
 			</div>

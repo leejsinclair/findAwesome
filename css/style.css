@@ -1,3 +1,7 @@
+/* default.css */
+/* General Demo Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
 @font-face {
     font-family: 'MuseoSlab500';
     src: url('../fonts/Museo_Slab_500-webfont.eot');
@@ -10,10 +14,6 @@
 
 }
 
-* {
-	box-sizing:border-box;
-}
-
 html, body {
 	height: 100%;
 	padding: 0;
@@ -24,9 +24,62 @@ body {
 	font-family: sans-serif;
 }
 
-.text-brand {
-	color: #888;
-	padding-left: 14px;
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    background: #f9f9f9;
+    font-weight: 300;
+    font-size: 15px;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+}
+
+.container > header {
+	width: 90%;
+	max-width: 1240px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 30px 50px 30px;
+}
+
+.container > header {
+	padding: 60px 30px 50px;
+	text-align: center;
 }
 
 .section {
@@ -57,16 +110,23 @@ body {
 .twitter-share-button {
 	margin-left: 10px;
 }
-
+img.favicon {
+	width: 72px;
+	height: 72px;
+	position: absolute;
+	z-index: 2;
+	left: 28px;
+	bottom: 22px;
+}
 .search input[type="text"] {
-	font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+	font-family: 'Lato', 'Open Sans', sans-serif;
 	font-weight: 100;
 	color: #888;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	
 	outline: none;
 	border: 1px solid #DDDDDD;
-	background: rgba(255,255,255,0.2);
+	background: rgba(255,255,255,0.5);
 	
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -106,7 +166,7 @@ body {
 }
 section {
 	width: 100%;
-	padding: 2em;
+	padding: 2em 0;
 }
 section.searching .container {
 	max-width: 960px;
@@ -141,7 +201,7 @@ section.searching .container {
   display: block;
   position: relative;
   top: 2em;
-  left: .5em;
+  left: 96px;
   opacity: 0;
   z-index: 0;
   color: rgba(52, 73, 94, .9);
@@ -207,6 +267,7 @@ section.searching {
 
 .search input[type="text"]{
 	width: 100%;
+	padding-left: 96px;
 }
 
 
@@ -222,34 +283,42 @@ section.listing {
 	padding: 0;
 }
 .listing li {
-	float: left;
+	/*float: left;*/
 	padding: 1em;
 }
 .listing li {
-	float: left;
+	/*float: left;*/
 	padding: 1em;
 	/*position: relative;*/ /* ADRIAN this stops full width */
 	text-align: center;
 	width: 18%;
 	border-radius: 10px;
-	border: 1px solid transparent;
+	/*border: 1px solid transparent;*/
 	margin: 1%;
 	color: #999;
 	font-family: sans-serif;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 .listing li:hover {
-	border: 1px solid #eee;
-	background: rgba(52, 73, 94, .05);
+	/*border: 1px solid #eee;
+	background: rgba(52, 73, 94, .05);*/
 	cursor: pointer;
 }
-.listing li:active {
+/*.listing li:active {
 	border: 1px solid #eee;
 	background: rgba(52, 73, 94, 1);
+}*/
+
+
+.listing li.og-expanded {
+	background: none;
+	border: none;
 }
+
+
 .listing li i {
 	font-size: 6em;
 	text-align: center;
@@ -264,9 +333,14 @@ section.listing {
 	clear: both;
 	color: rgba(52, 73, 94, 1);
 }
-.listing li:active i {
-	color: #fff;
+.og-details span.fa {
+	color: rgba(255, 255, 255, 1);
+	width: 1.2em;
+	padding: 5px;
 }
+/*.listing li:active i {
+	color: #fff;
+}*/
 .listing li h3 {
 	float: left;
 	padding: .5em 0;
@@ -281,6 +355,8 @@ section.listing {
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	
+	display: none; /*Not going to use this anymore, replaced by expanded div details*/
 }
 .listing li:hover h3 {
 	color: rgba(52, 73, 94, 1);
@@ -324,6 +400,21 @@ section.love {
 	border-bottom: 1px dotted #34495e;
 }
 
+.love p.text-brand {
+	font-family: 'Lato', sans-serif;
+	color: #888;
+	padding-left: 28px;
+	text-align: left;
+	letter-spacing: -.5px;
+	font-weight: 200;
+}
+.love p.text-brand a {
+	font-weight: 400;
+}
+
+
+
+
 
 .og-expander {
 	z-index: 3;
@@ -337,7 +428,6 @@ section.love {
 .tiny { font-size: 0.75em; }
 
 .massive, .huge, .big, .medium, .small, .tiny {
-	margin-right: 14px;
 }
 
 /* og: grid */
@@ -353,7 +443,7 @@ section.love {
 	display: inline-block;
 	margin: 10px 5px 0 5px;
 	vertical-align: top;
-	height: 250px;
+	height: 150px;
 }
 
 .og-grid li > a,
@@ -365,14 +455,14 @@ section.love {
 }
 
 .og-grid li.og-expanded > a::after {
-	top: auto;
+	top: 90px;
 	border: solid transparent;
 	content: " ";
 	height: 0;
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-bottom-color: #ddd;
+	border-bottom-color: rgba(52, 73, 94, 1);
 	border-width: 15px;
 	left: 50%;
 	margin: -20px 0 0 -15px;
@@ -380,7 +470,7 @@ section.love {
 
 .og-expander {
 	position: absolute;
-	background: #ddd;
+	color: rgba(255, 255, 255, 1);
 	top: auto;
 	left: 0;
 	width: 100%;
@@ -388,7 +478,18 @@ section.love {
 	text-align: left;
 	height: 0;
 	overflow: hidden;
+	background: rgba(52, 73, 94, 1);
 }
+/*.og-expander {
+	-moz-transition: height 350ms ease;
+	-webkit-transition: height 350ms ease;
+	transition: height 350ms ease;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	top: initial;
+	bottom: 0;
+}*/
 
 .og-expander-inner {
 	padding: 50px 30px;
@@ -411,10 +512,15 @@ section.love {
 	width: 100%;
 	top: 50%;
 	height: 1px;
-	background: #888;
+	background: rgba(255, 255, 255, .65);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	transform: rotate(45deg);
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .og-close::after {
@@ -425,20 +531,28 @@ section.love {
 
 .og-close:hover::before,
 .og-close:hover::after {
-	background: #333;
+	background: rgba(255, 255, 255, 1);
 }
 
 .og-fullimg,
 .og-details {
 	width: 50%;
 	float: left;
-	height: 100%;
+	height: 10%;
 	overflow: hidden;
 	position: relative;
 }
-
+.og-fullimg {
+	position: absolute;
+	height: 10%;
+	bottom: 0;
+	width: 100%;
+}
 .og-details {
 	padding: 0 40px 0 20px;
+	height: 100%;
+	float: left;
+	width: 100%;
 }
 
 .og-fullimg {
@@ -449,6 +563,28 @@ section.love {
 	display: inline-block;
 	max-height: 100%;
 	max-width: 100%;
+}
+.og-details h1,
+.og-details .highlight {
+	float: left;
+	margin: 20px;
+}
+.og-details pre {
+	background-color: #fafafa;
+	padding: 6px 12px;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	color: #444;
+}
+.na {
+	color: #4f9fcf;
+}
+.s {
+	color: #d44950;
+}
+
+.og-details h1, {
+	clear: left;
 }
 
 .og-details h3 {
@@ -537,118 +673,46 @@ section.love {
 	
 }
 
-/* default.css */
-/* General Demo Style */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-html { height: 100%; }
 
-*,
-*:after,
-*:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
 
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    background: #f9f9f9;
-    font-weight: 300;
-    font-size: 15px;
-    color: #333;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-a {
-	color: #555;
-	text-decoration: none;
-}
-
-.container {
-	width: 100%;
-	position: relative;
-}
-
-.container > header {
-	width: 90%;
-	max-width: 1240px;
-	margin: 0 auto;
-	position: relative;
-	padding: 0 30px 50px 30px;
-}
-
-.container > header {
-	padding: 60px 30px 50px;
-	text-align: center;
-}
-
-.container > header h1 {
-	font-size: 34px;
-	line-height: 38px;
-	margin: 0 auto;
-	font-weight: 700;
-	color: #333;
-}
-
-.container > header h1 span {
-	display: block;
-	font-size: 20px;
-	font-weight: 300;
-}
-
-.main > p {
-	text-align: center;
-	padding: 50px 20px;
-}
 
 /* Header Style */
-.codrops-top {
-	line-height: 24px;
-	font-size: 11px;
-	background: #fff;
-	background: rgba(255, 255, 255, 0.5);
-	text-transform: uppercase;
-	z-index: 9999;
-	position: relative;
-	box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+.og-expander {
+	-moz-transition: height 350ms ease;
+	-webkit-transition: height 350ms ease;
+	transition: height 350ms ease;
+	width: 100%;
+	position: absolute;
+}
+li.og-expanded {
+	height: 515px;
+	-moz-transition: height 350ms ease;
+	-webkit-transition: height 350ms ease;
+	transition: height 350ms ease;
 }
 
-.codrops-top a {
-	padding: 0px 10px;
-	letter-spacing: 1px;
-	color: #333;
-	display: inline-block;
+
+
+.og-expander-inner {
+	margin: 0 auto;
 }
 
-.codrops-top a:hover {
-	background: rgba(255,255,255,0.8);
-	color: #000;
+@media (min-width: 768px) {
+.og-expander-inner {
+	max-width: 750px;
+}
 }
 
-.codrops-top span.right {
-	float: right;
+@media (min-width: 992px) {
+.og-expander-inner {
+	max-width: 970px;
+}
+}
+@media (min-width: 1200px) {
+.og-expander-inner {
+	max-width: 1170px;
+}	
 }
 
-.codrops-top span.right a {
-	float: left;
-	display: block;
-}
+

@@ -341,7 +341,7 @@ var Grid = (function() {
 			}
 			
 			// if already expanded remove class "og-expanded" from current item and add it to new item
-			if( current !== -1 ) {
+			if( current !== -2 ) {
 				var $currentItem = $items.eq( current );
 				$currentItem.removeClass( 'og-expanded' );
 				this.$item.addClass( 'og-expanded' );
