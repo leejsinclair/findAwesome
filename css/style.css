@@ -31,6 +31,8 @@ body {
 *:before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -136,12 +138,15 @@ img.favicon {
 	
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
 	border-radius: 5px;
 	
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
+	transition: all 0.30s ease-in-out;
 	
 }
 .search input[type=text]:focus {
@@ -162,8 +167,9 @@ img.favicon {
 	color: #bbb;
 	
 	-moz-transform: scaleX(-1); /* Gecko */
-    -o-transform: scaleX(-1); /* Operah */
     -webkit-transform: scaleX(-1); /* webkit */
+    -ms-transform: scaleX(-1); /* IE */
+    -o-transform: scaleX(-1); /* Opera */
     transform: scaleX(-1); /* standard */
     filter: FlipH; /* IE 6/7/8 */
 }
@@ -219,6 +225,7 @@ section.searching .container {
   -webkit-transition: top 0.5s ease, opacity 0.5s ease;
      -moz-transition: top 0.5s ease, opacity 0.5s ease;
       -ms-transition: top 0.5s ease, opacity 0.5s ease;
+       -o-transition: top 0.5s ease, opacity 0.5s ease;
           transition: top 0.5s ease, opacity 0.5s ease;
 }
 .search input::-webkit-input-placeholder {
@@ -236,7 +243,27 @@ section.searching .container {
    font-family: 'MuseoSlab500', serif;
    letter-spacing: -2px;
 }
+.search input::-ms-placeholder {
+   color: rgba(52, 73, 94, 0.4);
+   font-family: 'MuseoSlab500', serif;
+   letter-spacing: -2px;
+}
+.search input::-o-placeholder {
+   color: rgba(52, 73, 94, 0.4);
+   font-family: 'MuseoSlab500', serif;
+   letter-spacing: -2px;
+}
 .search input:-ms-input-placeholder {  
+   color: rgba(52, 73, 94, 0.4);
+   font-family: 'MuseoSlab500', serif;
+   letter-spacing: -2px;
+}
+.search input:-o-input-placeholder {  
+   color: rgba(52, 73, 94, 0.4);
+   font-family: 'MuseoSlab500', serif;
+   letter-spacing: -2px;
+}
+.search input:input-placeholder {  
    color: rgba(52, 73, 94, 0.4);
    font-family: 'MuseoSlab500', serif;
    letter-spacing: -2px;
@@ -306,6 +333,7 @@ section.listing {
 	font-family: sans-serif;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
@@ -361,6 +389,7 @@ li.og-expanded i {
 	color: rgba(52, 73, 94, 0);
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	
@@ -491,6 +520,8 @@ section.love {
 /*.og-expander {
 	-moz-transition: height 350ms ease;
 	-webkit-transition: height 350ms ease;
+	-ms-transition: height 350ms ease;
+	-o-transition: height 350ms ease;
 	transition: height 350ms ease;
 	width: 100%;
 	position: fixed;
@@ -524,10 +555,13 @@ section.love {
 	background: rgba(255, 255, 255, .65);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 	
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -535,6 +569,8 @@ section.love {
 .og-close::after {
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 
@@ -585,6 +621,7 @@ section.love {
 	border-radius: 4px;
 	color: #444;
 	cursor: text;
+	font-size: .8em;
 }
 .na {
 	color: #4f9fcf;
@@ -647,6 +684,8 @@ section.love {
 	margin: -25px 0 0 -25px;
 	-webkit-animation: loader 0.5s infinite ease-in-out both;
 	-moz-animation: loader 0.5s infinite ease-in-out both;
+	-ms-animation: loader 0.5s infinite ease-in-out both;
+	-o-animation: loader 0.5s infinite ease-in-out both;
 	animation: loader 0.5s infinite ease-in-out both;
 }
 
@@ -657,6 +696,18 @@ section.love {
 }
 
 @-moz-keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@-ms-keyframes loader {
+	0% { background: #ddd; }
+	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@-o-keyframes loader {
 	0% { background: #ddd; }
 	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
 	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
@@ -688,9 +739,15 @@ section.love {
 
 
 /* Header Style */
+.og-grid li.og-expanded .og-expander {
+	height: 400px;
+}
+
 .og-expander {
 	-moz-transition: height 350ms ease;
 	-webkit-transition: height 350ms ease;
+	-ms-transition: height 350ms ease;
+	-o-transition: height 350ms ease;
 	transition: height 350ms ease;
 	width: 100%;
 	position: absolute;
@@ -699,6 +756,8 @@ li.og-expanded {
 	height: 515px;
 	-moz-transition: height 350ms ease;
 	-webkit-transition: height 350ms ease;
+	-ms-transition: height 350ms ease;
+	-o-transition: height 350ms ease;
 	transition: height 350ms ease;
 }
 
