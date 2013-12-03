@@ -533,6 +533,7 @@ section.love {
 .og-expander-inner {
 	padding: 50px 30px;
 	height: 100%;
+	max-width: 767px;
 }
 
 .og-close {
@@ -612,7 +613,7 @@ section.love {
 .og-details h1,
 .og-details .highlight {
 	float: left;
-	margin: 20px;
+	margin: 20px 20px -8px 20px;
 }
 .og-details pre {
 	background-color: #fafafa;
@@ -792,13 +793,28 @@ li.og-expanded {
 	max-height: 325px;
 }
 
+.og-details pre {
+	font-size: .8em;
+}
+
+.og-details h1 {
+	font-size: 1.2em;
+}
+
+.og-details h1, .og-details .highlight {
+	float: left;
+	margin: 10px 5px 0 5px;
+	clear: left;
+}
+.og-details pre {
+	padding: 4px 8px;
+
 }
 
 @media (max-width: 479px) {
 .socials {
 	top: -15px;
 }
-
 .og-details pre {
 	font-size: .6em;
 }
