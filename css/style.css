@@ -421,12 +421,10 @@ section.love {
 	font-weight: 400;
 }
 
-
-
-
-
 .og-expander {
 	z-index: 3;
+	transition: height 350ms ease; 
+	-webkit-transition: height 350ms ease;
 }
 
 .massive { font-size: 16em; }
@@ -488,6 +486,10 @@ section.love {
 	height: 0;
 	overflow: hidden;
 	background: rgba(52, 73, 94, 1);
+}
+
+.og-grid li.og-expanded .og-expander {
+	height: 400px;
 }
 /*.og-expander {
 	-moz-transition: height 350ms ease;
