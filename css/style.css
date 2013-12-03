@@ -13,7 +13,9 @@
     font-style: normal;
 
 }
-
+html {
+	overflow-y: hidden;
+}
 html, body {
 	height: 100%;
 	padding: 0;
@@ -119,7 +121,7 @@ img.favicon {
 	height: 72px;
 	position: absolute;
 	z-index: 2;
-	left: 28px;
+	left: 22px;
 	bottom: 22px;
 }
 .search input[type="text"] {
@@ -185,7 +187,7 @@ section.searching .container {
 .search {
   margin-bottom: 0;
   position: relative;
-  padding-bottom: 0.5em;
+  padding: 8px !important;
 }
 
 .search input,
@@ -295,7 +297,8 @@ section.listing {
 	padding: 1em;
 	/*position: relative;*/ /* ADRIAN this stops full width */
 	text-align: center;
-	width: 18%;
+	/*width: 18%;*/
+	width:150px; /* going for a responsive grid now */
 	border-radius: 10px;
 	/*border: 1px solid transparent;*/
 	margin: 1%;
@@ -320,8 +323,8 @@ section.listing {
 .listing li.og-expanded {
 	background: none;
 	border: none;
+	cursor: default;
 }
-
 
 .listing li i {
 	font-size: 6em;
@@ -394,6 +397,7 @@ section.love {
 	word-spacing: 1px;
 	letter-spacing: -1px;
 	font-size: 1em;
+	padding: 0 1em;
 }
 .love p a {
 	color: rgba(52, 73, 94, .8);
@@ -508,6 +512,7 @@ section.love {
 	top: 20px;
 	right: 20px;
 	cursor: pointer;
+	z-index: 1;
 }
 
 .og-close::before,
@@ -554,7 +559,7 @@ section.love {
 	width: 100%;
 }
 .og-details {
-	padding: 0 40px 0 20px;
+	padding: 0;
 	height: 100%;
 	float: left;
 	width: 100%;
@@ -580,6 +585,7 @@ section.love {
 	border: 1px solid #eee;
 	border-radius: 4px;
 	color: #444;
+	cursor: text;
 }
 .na {
 	color: #4f9fcf;
@@ -701,23 +707,110 @@ li.og-expanded {
 
 .og-expander-inner {
 	margin: 0 auto;
+	padding: 30px 20px;
 }
+
+
+@media (max-width: 767px) {
+.socials {
+	top: 0;
+}
+
+.massive { font-size: 12em; }
+.huge { font-size: 8.25em; }
+.big { font-size: 5.25em; }
+.medium { font-size: 2.25em; }
+.small { font-size: .825em; }
+.tiny { font-size: 0.5625em; }
+
+.og-expander-inner {
+	max-width: 600px;
+}
+
+li.og-expanded {
+	max-height: 450px;
+}
+.og-expander {
+	max-height: 325px;
+}
+
+}
+
+@media (max-width: 479px) {
+.socials {
+	top: -15px;
+}
+
+.og-details pre {
+	font-size: .6em;
+}
+.og-details h1, .og-details .highlight {
+	margin: 5px 10px;
+}
+
+.og-expander-inner {
+	max-width: 320px;
+}
+
+.search input, .search textarea {
+	font-size: 1.4em;
+	height: 4.8em;
+}
+.search label {
+	font-size: 1.4em;
+}
+}
+
+/*@media (max-width: 480px) {
+.socials {
+	top: -15px;
+}
+}*/
+
+@media (max-width: 599px) {
+	
+.massive { font-size: 5.333em; }
+.huge { font-size: 3.666em; }
+.big { font-size: 2.333em; }
+.medium { font-size: 1em; }
+.small { font-size: .3666em; }
+.tiny { font-size: .25em; }
+
+li.og-expanded {
+	max-height: 320px;
+}
+.og-expander {
+	max-height: 215px;
+}
+
+.og-details pre {
+	font-size: .6em;
+}
+
+.og-expander-inner {
+max-width: 440px;
+}
+
+}
+
+
 
 @media (min-width: 768px) {
 .og-expander-inner {
-	max-width: 750px;
+	max-width: 768px;
 }
 }
 
 @media (min-width: 992px) {
 .og-expander-inner {
-	max-width: 970px;
+	max-width: 768px;
 }
 }
+
 @media (min-width: 1200px) {
 .og-expander-inner {
-	max-width: 1170px;
-}	
+	max-width: 768px;
+}
 }
 
 
