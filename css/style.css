@@ -128,6 +128,10 @@ img.favicon {
 	left: 22px;
 	bottom: 22px;
 }
+#loading {
+	font-size: 2em;
+	color: #888;
+}
 .search input[type="text"] {
 	font-family: 'Lato', 'Open Sans', sans-serif;
 	font-weight: 100;

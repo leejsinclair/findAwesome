@@ -67,7 +67,8 @@
 
 	<section class="listing">
 	<!-- Icon search results list -->
-	<div class="container">  
+	<div class="container">
+	  <p align="center" id="loading"><i class="fa fa-spinner fa-spin text-muted"></i></p>
 	  <ul id="og-grid" class="og-grid">
 		 <li ng-repeat="font in data | filter: search" class="{{font.class}}">
 			<a ng-click="select(font, 400)">
@@ -122,12 +123,21 @@
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
 		// Load scripts
-	  	downloadJSAtOnload('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
-	  	downloadJSAtOnload('//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js');
-	  	downloadJSAtOnload('js/main.js?t=4');
+	  	//downloadJSAtOnload('//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js');
+	  	//downloadJSAtOnload('js/main.js?t=4');
 
 	  	// Set field focus
 	  	document.getElementById("primarySearch").focus();
+
+	  	$(function() {
+		  $("body").on("input propertychange", ".search", function(e) {
+		    $(this).toggleClass("search-with-value", !!$(e.target).val());
+		  }).on("focus", ".search", function() {
+		    $(this).addClass("search-with-focus");
+		  }).on("blur", ".search", function() {
+		    $(this).removeClass("search-with-focus");
+		  });
+		});
 	  }
 
 	  // Add a script element as a child of the body
@@ -155,6 +165,8 @@
 	  ga('send', 'pageview');
 
 	</script>
-
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+	<script src="js/main.js?t=4"></script>
   </body>
 </html>
