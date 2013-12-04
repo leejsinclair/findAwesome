@@ -775,6 +775,9 @@ li.og-expanded {
 @media (max-width: 767px) {
 .socials {
 	top: 0;
+	right: 50%;
+	margin-right: -100px;
+
 }
 
 .massive { font-size: 12em; }
