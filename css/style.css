@@ -14,7 +14,7 @@
 
 }
 html {
-	overflow-y: hidden;
+	overflow-x: hidden;
 }
 html, body {
 	height: 100%;
@@ -24,6 +24,8 @@ html, body {
 
 body {
 	font-family: sans-serif;
+	overflow-y: scroll; /* has to be scroll, not auto */
+  	-webkit-overflow-scrolling: touch;
 }
 
 *,
