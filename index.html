@@ -19,12 +19,22 @@
     <link rel="stylesheet" href="http://findaweso.me/css/style.min.css?t=4" />
 
     <link rel="icon" href="http://findaweso.me/img/favicon.ico" sizes="32x32">
-    
-    
-    
-    <!-- Following added by scriptkyddie777 from the expander demo I stoled LOLZ -->
-    <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
-	<!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
+    <style>
+    section.content .container {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	h1 { color: rgba(52,73,94,.8);}
+	img.favicon {
+		width: 72px;
+		height: 72px;
+		position: relative;
+		z-index: 2;
+		float: left;
+		margin-right: 10px;
+		left: 0;
+	}
+    </style>
   </head>
 
   <body ng-controller="app">
@@ -38,6 +48,7 @@
 	<!-- Search form -->
 	  <form role="form" class="search">
 		 <div class="row">
+		 	<img class="favicon" src="http://findaweso.me/img/find-awesome-icon.png">
 			<h1>FindAwesome</h1>
 		 </div>
 	  </form>
@@ -47,7 +58,7 @@
 	<section class="content">
 	<!-- Icon search results list -->
 	<div class="container">
-	  <p>Content</p>
+	  <p>An easy way to find Font Awesome icons.</p>
 	</div>
 	</section>
     
