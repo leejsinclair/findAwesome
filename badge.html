@@ -78,7 +78,7 @@
 				<div class="col-md-4">
 					<h2>1. Select an icon</h2>
 					<ul>
-						<li ng-repeat="font in data | filter: search">
+						<li ng-repeat="font in data | filter: search" class="pull-left">
 						<a ng-click="select(font, 400)">
 							<i class="fa {{font.name}}"></i> 
 							<h3>{{font.name}}</h3>
