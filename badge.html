@@ -86,63 +86,65 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-md-4">
-					<h2>2. Badge options</h2>
-					<h3>Colors</h3>
-					<div class="row color-pallet">
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="panelColor" class="clearfix">Background color:</label>
-								<input type="color" ng-model="options.backgroundColor" id="backgroundColor" />
+				<div class="col-md-4 rel">
+					<div class="fixed">
+						<h2>2. Badge options</h2>
+						<h3>Colors</h3>
+						<div class="row color-pallet">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="panelColor" class="clearfix">Background color:</label>
+									<input type="color" ng-model="options.backgroundColor" id="backgroundColor" />
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="borderColor" class="clearfix">Border color:</label>
+									<input type="color" ng-model="options.borderColor" id="borderColor" />
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="fontColor" class="clearfix">Icon color:</label>
+									<input type="color" ng-model="options.fontColor" id="fontColor" />
+								</div>
 							</div>
 						</div>
 
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="borderColor" class="clearfix">Border color:</label>
-								<input type="color" ng-model="options.borderColor" id="borderColor" />
-							</div>
-						</div>
+						<button ng-click="randomColors()" class="btn btn-primary">Random colors</button>
 
-						<div class="col-md-4">
-							<div class="form-group">
-								<label for="fontColor" class="clearfix">Icon color:</label>
-								<input type="color" ng-model="options.fontColor" id="fontColor" />
+						<h3>Borders and size</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="borderWidth" class="clearfix">Border width</label>
+									<input type="range" id="borderWidth" min="1" max="10" ng-model="options.borderWidth" />
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="fontSize" class="clearfix">Size</label>
+									<input type="range" id="fontSize" min="1" max="5" value="2" ng-model="options.size" />
+								</div>
 							</div>
 						</div>
 					</div>
-
-					<button ng-click="randomColors()" class="btn btn-primary">Random colors</button>
-
-					<h3>Borders and size</h3>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="borderWidth" class="clearfix">Border width</label>
-								<input type="range" id="borderWidth" min="1" max="10" ng-model="options.borderWidth" />
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="fontSize" class="clearfix">Size</label>
-								<input type="range" id="fontSize" min="1" max="5" value="2" ng-model="options.size" />
-							</div>
-						</div>
-					</div>
-
 				</div>
-				<div class="col-md-4">
-					<h2>3. Your badge</h2>
-					<span id="badge">
-						<i class="fa {{icon.name}} ba" ng-repeat="icon in data | filter : { badge: true }" style="border-width:{{options.borderWidth}}px; border-color:{{options.borderColor}}; background-color: {{options.backgroundColor}}; color: {{options.fontColor}}; font-size: {{options.size}}em"></i>
-					</span>
+				<div class="col-md-4 rel">
+					<div class="fixed">
+						<h2>3. Your badge</h2>
+						<span id="badge">
+							<i class="fa {{icon.name}} ba" ng-repeat="icon in data | filter : { badge: true }" style="border-width:{{options.borderWidth}}px; border-color:{{options.borderColor}}; background-color: {{options.backgroundColor}}; color: {{options.fontColor}}; font-size: {{options.size}}em"></i>
+						</span>
 
-					<div class="form-group">
-		              <label for="copyPaste" class="clearfix">Copy & Paste</label>
-		              <textarea id="copyPaste" class="form-control"><i class="fa {{icon.name}} ba" ng-repeat="icon in data | filter : { selected: true }" style="border-width:{{options.borderWidth}}px; border-color:{{options.borderColor}}; background-color: {{options.backgroundColor}}; color: {{options.fontColor}}; font-size: {{options.size}}em"></i>
-		              </textarea>
-		              <label class="clearfix">Base style</label>
+						<div class="form-group">
+			              <label for="copyPaste" class="clearfix">Copy & Paste</label>
+			              <textarea id="copyPaste" class="form-control"><i class="fa {{icon.name}} ba" ng-repeat="icon in data | filter : { selected: true }" style="border-width:{{options.borderWidth}}px; border-color:{{options.borderColor}}; background-color: {{options.backgroundColor}}; color: {{options.fontColor}}; font-size: {{options.size}}em"></i>
+			              </textarea>
+			              <label class="clearfix">Base style</label>
 <textarea rows="8">.ba {
 	background-color: #CCC;
 	border-radius: 100%;
@@ -151,8 +153,9 @@
 	font-size: 2em;
 	color: #666;
 }</textarea>
-						<label class="clearfix">Font awesome</label>
-						<textarea><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" /></textarea>
+							<label class="clearfix">Font awesome</label>
+							<textarea><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css" /></textarea>
+						</div>
 		            </div>
 				</div>
 			</div>
